@@ -1,6 +1,6 @@
-def isEven(x: Int): Boolean = {
-    if (x % 2 == 0) true else false
+def filter_func(lst: List[Int], func: (Int) => Boolean): List[Int] = {
+  if (lst.isEmpty) Nil else if (func(lst.head)) lst.head :: filter_func(lst.tail, func) else filter_func(lst.tail, func)
 }
-def list_filter_func(lst: List[Int], func: (Int) => Boolean): List[Int] = {
-    if (lst == Nil) Nil else if (func(lst.head)) List(lst.head) ++ list_filter(lst.tail, lst.head) else list_filter(lst.tail, lst.head)
+def isEven(x: Int): Boolean = {
+  if (x % 2 == 0) true else false
 }
