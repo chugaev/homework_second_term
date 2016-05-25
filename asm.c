@@ -61,10 +61,14 @@ int main() {
     gets(fileName);
     FILE *file = fopen(fileName, "r");
     if (file == NULL) {
+        free(data);
+	    free(stack);
         printf("File not found\n");
         return 0;
     }
     if (!read(file, &str, &stInstr, &instr, &label, &stArg, &ip, &p_label)) {
+        free(data);
+	    free(stack);
         fclose(file);
         return 0;
     }
