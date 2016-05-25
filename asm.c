@@ -71,6 +71,8 @@ int main() {
     if (!run(file, &instr, data, stack, &label)) {
         fclose(file);
     }
+    free(data);
+    free(stack);
     return 0;
 }
 int find(char *stInstr, char *str, int i)
